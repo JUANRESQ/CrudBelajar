@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\Post1Controller;
 
 /*
@@ -20,3 +21,11 @@ Route::get('/', function () {
 });
 
 Route::resource('post', PostController::class);
+
+Route::get('/login', [LoginController::class, 'login']);
+route::post('/actionlogin',[LoginController::class, 'authenticate']);
+route::get('/logout',[LoginController::class, 'logout']);
+
+// google
+Route::get('/auth/redirect', [LoginController::class, 'redirectToProvider']);
+Route::get('/auth/callback', [LoginController::class, 'handleProviderCallback']);

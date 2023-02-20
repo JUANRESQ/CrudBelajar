@@ -8,6 +8,7 @@
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
 
         <!-- Styles -->
         <style>
@@ -116,8 +117,11 @@
                                 <path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
                             </svg>
 
-                            <a href="https://github.com/sponsors/taylorotwell" class="ml-1 underline">
+                            <a href="https://github.com/sponsors/taylorotwell" class="ml-1 underline mr-2">
                                 Sponsor
+                            </a>
+                            <a href="/login" class="ml-2 underline mt-1">
+                                <i class="bi bi-door-open"></i> LOGIN
                             </a>
                         </div>
                     </div>

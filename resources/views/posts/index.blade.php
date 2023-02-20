@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title></title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 
@@ -31,6 +32,7 @@
 
                 <div class="card border-0 shadow rounded">
                     <div class="card-body">
+                        <a href="/logout" onsubmit="return confirm('apakah anda yakin ingin keluar ?');" class="btn btn-md btn-danger mb-3 float-left">Logout</a>
                         <a href="{{ route('post.create') }}" class="btn btn-md btn-success mb-3 float-right">New
                             Post</a>
 
@@ -55,10 +57,10 @@
                                         <form onsubmit="return confirm('Apakah Anda Yakin ?');"
                                             action="{{ route('post.destroy', $post->id) }}" method="POST">
                                             <a href="{{ route('post.edit', $post->id) }}"
-                                                class="btn btn-sm btn-primary">EDIT</a>
+                                                class="btn btn-sm btn-primary"><i class="bi bi-pencil-fill"></i></a>
                                             @csrf
                                             @method('DELETE')
-                                            <button type="submit" class="btn btn-sm btn-danger d-inline">HAPUS</button>
+                                            <button type="submit" class="btn btn-sm btn-danger d-inline"><i class="bi bi-trash"></i></button>
                                         </form>
                                     </td>
                                 </tr>
@@ -77,7 +79,6 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
 </body>
 
 </html>
