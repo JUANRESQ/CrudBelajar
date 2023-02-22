@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+
 use App\Models\Post;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
@@ -15,8 +16,21 @@ class PostController extends Controller
      */
     public function index()
     {
-        $posts = Post::latest()->get();
-        return view('posts.index', compact('posts'));
+        // if(Post::where('role', auth()->user()->role == 'admin'))
+        // {
+        //     $dat = [
+        //         'title' => 'Home',
+        //         'posts' = post::all()
+        //     ];
+        //     return view('posts.index', $dat);
+        // }else{
+            $data = [
+                'title' => 'Home',
+                'posts' =>  Post::where('user_id', auth()->user()->id)->get()
+            ];
+            return view('posts.index', $data);
+
+        // }
     }
 
     /**

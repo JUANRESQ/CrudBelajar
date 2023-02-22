@@ -13,6 +13,9 @@ return [
     | a conventional file to locate the various service credentials.
     |
     */
+    // ?php {
+    //     ""m => ;
+    // }
 
     'mailgun' => [
         'domain' => env('MAILGUN_DOMAIN'),
