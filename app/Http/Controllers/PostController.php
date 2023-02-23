@@ -16,21 +16,20 @@ class PostController extends Controller
      */
     public function index()
     {
-        // if(Post::where('role', auth()->user()->role == 'admin'))
-        // {
-        //     $dat = [
-        //         'title' => 'Home',
-        //         'posts' = post::all()
-        //     ];
-        //     return view('posts.index', $dat);
-        // }else{
+        if(auth()->user()->role == "admin")
+        {
+            return view('posts.index', [
+                'title' => 'Home admin',
+                'posts' => Post::all()
+            ]);
+        }else{
             $data = [
                 'title' => 'Home',
                 'posts' =>  Post::where('user_id', auth()->user()->id)->get()
             ];
             return view('posts.index', $data);
 
-        // }
+        }
     }
 
     /**
