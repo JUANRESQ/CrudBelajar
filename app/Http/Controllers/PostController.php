@@ -16,7 +16,7 @@ class PostController extends Controller
      */
     public function index()
     {
-        if(auth()->user()->role == "admin")
+        if((auth()->user()->role == "admin") || (auth()->user()->role == "operator"))
         {
             return view('posts.index', [
                 'title' => 'Home admin',
@@ -63,7 +63,8 @@ class PostController extends Controller
             'title' => $request->title,
             'content' => $request->content,
             'status' => $request->status,
-            'slug' => Str::slug($request->title)
+            'slug' => Str::slug($request->title),
+            'user_id' => auth()->user()->id
         ]);
 
         if ($post) {
